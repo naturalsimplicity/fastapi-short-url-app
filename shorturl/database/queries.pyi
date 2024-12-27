@@ -1,0 +1,16 @@
+from aiosqlite import Connection
+
+class UrlQueriesMixin:
+    async def create_new_url(self, conn: Connection, short_id: str, full_url: str) -> int: ...
+    async def get_full_url(self, conn: Connection, short_id: str) -> str: ...
+    async def get_short_id(self, conn: Connection, full_url: str) -> str: ...
+
+class SchemaQueriesMixin:
+    async def create_table_urls(self, conn: Connection) -> None: ...
+
+class Queries(
+    UrlQueriesMixin,
+    SchemaQueriesMixin
+): ...
+
+queries: Queries
