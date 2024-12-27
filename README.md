@@ -19,12 +19,12 @@ with both short ID and full URL
 
 Create an image from Dockerfile:
 
-    docker build -t todo-app .
+    docker build -t shorturl-service .
 
 Create volume for the app data:
 
-    docker volume create todo_data
+    docker volume create shorturl_data
 
 Start container with the app:
     
-    docker run --name todo-app-fastapi -d -p 8000:80 -v todo_data:/app/data todo-app
+    docker run --name shorturl-service -d -p 8001:80 -v shorturl_data:/app/data shorturl-service

@@ -1,8 +1,8 @@
 FROM python:3.12-slim
 
-COPY . todo
+COPY . shorturl
 
-WORKDIR todo
+WORKDIR shorturl
 
 RUN pip install -r requirements.txt
 
